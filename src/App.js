@@ -7,7 +7,7 @@ function App() {
     <div className="App">
       
 
-
+  {/*Today I learend the <Link /> tag in react */}
 
       {/*Routes the logic here is like the lojic in the contex because we import it from then used it*/}
       <Routes>
