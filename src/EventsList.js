@@ -7,7 +7,7 @@ export default function Events() {
     const eventss = useContext(eventsContext);
   let eventsList = eventss.map((event) => {
     return (
-      <Link key={event.id} to={`/eventDetails/${event.id}`}>
+      <Link key={event.id} to={`/events/${event.id}`}>
         <div
           style={{
             background: "blue",
