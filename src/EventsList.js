@@ -1,18 +1,25 @@
-export default function Events()
-{
-    {/*I leared the logic of the dynamic router and why we shoud use it*/}
-    {/*I learend about use params*/}
-    return(
-        <>
-            <div>
-                <h1>Event Title</h1>
-                <p>sdlkfj lkdjkdjs kjf</p>
-            </div>
-            
-            <div>
-                <h1>Event Title</h1>
-                <p>sdlkfj lkdjkdjs kjf</p>
-            </div>
-        </>
-    )
+import { Link } from "react-router-dom";
+import { eventsContext } from "./contexts/eventsContext";
+import { useContext } from "react";
+
+
+export default function Events() {
+    const eventss = useContext(eventsContext);
+  let eventsList = eventss.map((event) => {
+    return (
+      <Link key={event.id} to={`/eventDetails/${event.id}`}>
+        <div
+          style={{
+            background: "blue",
+            marginTop: "10px",
+            color: "white",
+            padding: "10px",
+          }}
+        >
+          <h1>{event.title}</h1>
+        </div>
+      </Link>
+    );
+  });
+  return <>{eventsList}</>;
 }
